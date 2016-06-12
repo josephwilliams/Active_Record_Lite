@@ -5,10 +5,10 @@ An ORM inspired by Rails' Active Record and designed with Ruby RSPEC to ensure t
 - Easy, English-like SQL queries using associations
 
 - Quick, clean getter and setter methods through
-'''ruby
+```ruby
 attr_accessor
-'''
-'''ruby
+```
+```ruby
 class AttrAccessorObject
   def self.my_attr_accessor(*names)
     names.each do |name|
@@ -26,4 +26,4 @@ class AttrAccessorObject
     end
   end
 end
-'''
+```
