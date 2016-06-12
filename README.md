@@ -60,4 +60,17 @@ module Associatable
   end
 end
 ```
-- Ability to save and update models
+- Ability to save and update models by utilizing SQL within a ruby code base
+```ruby
+def update
+  col_names = self.class.columns.map { |col| "#{col} = ?" }.join(', ')
+  DBConnection.execute(<<-SQL, *attribute_values, self.id)
+    UPDATE
+      #{self.class.table_name}
+    SET
+      #{col_names}
+    WHERE
+      id = ?
+  SQL
+end
+```
