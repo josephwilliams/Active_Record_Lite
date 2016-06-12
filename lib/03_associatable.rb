@@ -35,7 +35,6 @@ class HasManyOptions < AssocOptions
 end
 
 module Associatable
-
   def belongs_to(name, options = {})
     self.assoc_options[name] = BelongsToOptions.new(name, options)
 
